@@ -1,33 +1,39 @@
-# Project Details
-
-## Project Title
-**Fake Job Offer Detector Using Machine Learning**
-
----
+# Fake Job Offer Detector Using Machine Learning
 
 ## Project Overview
 
-The Fake Job Offer Detector is a Machine Learning-based system designed to identify fraudulent job postings. The system analyzes job descriptions, company details, and other job-related information to classify job offers as either genuine or fake. This helps job seekers avoid scams and improves the reliability of online recruitment platforms.
+The Fake Job Offer Detector is a Machine Learning-based web application developed to identify fraudulent job postings. The system analyzes job descriptions using Natural Language Processing (NLP) techniques and classifies them as either **Real** or **Fake**. This application helps job seekers avoid scams and improves the reliability of online recruitment platforms.
 
 ---
 
 ## Problem Statement
 
-Online job portals contain numerous job advertisements, but some of them are fraudulent and intended to deceive applicants. Fake job offers can result in financial loss, identity theft, and misuse of personal information. Therefore, an intelligent system is required to automatically detect and classify fake job postings using Machine Learning techniques.
+Many online job portals contain fake job advertisements that can lead to financial loss, identity theft, and misuse of personal information. This project aims to automatically detect fraudulent job postings using Machine Learning techniques.
 
 ---
 
 ## Project Objectives
 
-- Develop a Machine Learning model to detect fake job postings.
-- Analyze job descriptions and company information for fraud detection.
-- Classify job offers as genuine or fake.
-- Assist job seekers in identifying trustworthy opportunities.
+- Detect fake job postings using Machine Learning.
+- Analyze job descriptions using NLP techniques.
+- Classify job postings as Real or Fake.
+- Help job seekers identify trustworthy job opportunities.
 - Improve the security of online recruitment platforms.
 
 ---
 
-## Module List
+## Features
+
+- User Login Authentication
+- Fake Job Detection
+- Real Job Detection
+- Machine Learning-Based Prediction
+- Simple and User-Friendly Interface
+- Flask Web Application
+
+---
+
+## Modules
 
 ### Module 1: Data Collection
 Collect and store datasets containing real and fake job postings.
@@ -36,13 +42,13 @@ Collect and store datasets containing real and fake job postings.
 Clean the dataset, remove duplicates, handle missing values, and prepare data for analysis.
 
 ### Module 3: Feature Extraction
-Convert textual job descriptions into numerical features using NLP techniques.
+Convert textual job descriptions into numerical features using TF-IDF.
 
 ### Module 4: Model Training
-Train Machine Learning algorithms such as Logistic Regression, Naive Bayes, and Random Forest.
+Train the Machine Learning model using Logistic Regression.
 
 ### Module 5: Prediction
-Predict whether a given job posting is genuine or fake.
+Predict whether a given job posting is Real or Fake.
 
 ### Module 6: Result Analysis
 Display prediction results and evaluate model performance.
@@ -52,34 +58,33 @@ Display prediction results and evaluate model performance.
 ## Technology Stack
 
 | Category | Technology |
-|-----------|------------|
+|----------|------------|
 | Programming Language | Python |
+| Framework | Flask |
 | Machine Learning | Scikit-learn |
 | Data Processing | Pandas, NumPy |
-| NLP | NLTK, TF-IDF |
-| Frontend | Streamlit (Optional) |
+| NLP | TF-IDF |
+| Frontend | HTML, CSS |
 | Version Control | Git & GitHub |
 
 ---
 
-# Database Design
+## Database Design
 
-## Table 1: User
+### Table 1: User
 
 | Column Name | Data Type | Description |
-|------------|-----------|-------------|
+|-------------|-----------|-------------|
 | user_id | INT (PK) | Unique User ID |
 | name | VARCHAR(100) | User Name |
 | email | VARCHAR(100) | User Email |
 | password | VARCHAR(255) | User Password |
 | role | VARCHAR(20) | Admin/User |
 
----
-
-## Table 2: Job_Posting
+### Table 2: Job_Posting
 
 | Column Name | Data Type | Description |
-|------------|-----------|-------------|
+|-------------|-----------|-------------|
 | job_id | INT (PK) | Unique Job ID |
 | user_id | INT (FK) | User Reference |
 | title | VARCHAR(200) | Job Title |
@@ -89,36 +94,30 @@ Display prediction results and evaluate model performance.
 | salary_range | VARCHAR(50) | Salary Details |
 | post_date | DATE | Posting Date |
 
----
-
-## Table 3: Dataset
+### Table 3: Dataset
 
 | Column Name | Data Type | Description |
-|------------|-----------|-------------|
+|-------------|-----------|-------------|
 | dataset_id | INT (PK) | Dataset ID |
 | source | VARCHAR(100) | Dataset Source |
 | description | TEXT | Dataset Description |
 | records_count | INT | Number of Records |
 | uploaded_date | DATE | Upload Date |
 
----
-
-## Table 4: ML_Model
+### Table 4: ML_Model
 
 | Column Name | Data Type | Description |
-|------------|-----------|-------------|
+|-------------|-----------|-------------|
 | model_id | INT (PK) | Model ID |
 | model_name | VARCHAR(100) | Model Name |
 | algorithm | VARCHAR(100) | ML Algorithm |
 | accuracy | FLOAT | Model Accuracy |
 | training_date | DATE | Training Date |
 
----
-
-## Table 5: Prediction
+### Table 5: Prediction
 
 | Column Name | Data Type | Description |
-|------------|-----------|-------------|
+|-------------|-----------|-------------|
 | prediction_id | INT (PK) | Prediction ID |
 | job_id | INT (FK) | Job Posting ID |
 | model_id | INT (FK) | ML Model ID |
@@ -130,15 +129,139 @@ Display prediction results and evaluate model performance.
 
 ## Database Relationships
 
-| Parent Table | Relationship | Child Table |
-|-------------|-------------|-------------|
-| User | 1 : Many | Job_Posting |
-| Dataset | 1 : Many | ML_Model |
-| Job_Posting | 1 : Many | Prediction |
-| ML_Model | 1 : Many | Prediction |
+- User → Job_Posting (1 : Many)
+- Dataset → ML_Model (1 : Many)
+- Job_Posting → Prediction (1 : Many)
+- ML_Model → Prediction (1 : Many)
 
 ---
 
-## Expected Outcome
+## Project Structure
 
-The system automatically analyzes job posting information and predicts whether the job offer is genuine or fraudulent. This helps job seekers avoid scams and improves the security and reliability of online recruitment platforms.
+```text
+Fake_Job_Offer_Detector/
+│
+├── app.py
+├── model.pkl
+├── tfidf.pkl
+├── fake_job_postings.csv
+├── Fake_Job_Detector.ipynb
+├── README.md
+├── requirements.txt
+│
+├── templates/
+│   ├── login.html
+│   └── index.html
+│
+├── static/
+│   ├── style.css
+│   └── images/
+│
+├── diagrams/
+│   ├── Use_Case_Diagram.png
+│   ├── ER_Diagram.png
+│   ├── Flowchart.png
+│   └── System_Architecture.png
+│
+└── screenshots/
+    ├── Login_Page.png
+    ├── Home_Page.png
+    ├── Fake_Output.png
+    └── Real_Output.png
+```
+
+---
+
+## How to Run the Project
+
+### Step 1
+Clone the repository.
+
+### Step 2
+Install the required libraries.
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 3
+Run the application.
+
+```bash
+python app.py
+```
+
+### Step 4
+Open your browser and visit:
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+
+## Login Credentials
+
+| Username | Password |
+|----------|----------|
+| admin | 1234 |
+
+---
+
+## Expected Output
+
+After successful login, the user enters a job description into the application. The Machine Learning model analyzes the input and predicts whether the job posting is **Real** or **Fake**.
+
+**Example Results:**
+
+- ✅ Real Job Posting
+- ❌ Fake Job Posting
+
+---
+
+## Project Outcome
+
+The Fake Job Offer Detector successfully identifies fraudulent job postings using Machine Learning techniques. The application provides quick and reliable predictions through a simple web interface, helping users identify trustworthy job opportunities and avoid recruitment scams.
+
+---
+
+## Future Enhancements
+
+- User Registration
+- Admin Dashboard
+- Database Integration (MySQL/MongoDB)
+- Email Notifications
+- Company Verification System
+- Resume Analysis
+- Job Recommendation System
+- Deep Learning Models for Better Accuracy
+- Cloud Deployment (AWS/Azure/Render)
+- Mobile Application Support
+- Multi-language Support
+
+---
+
+## Screenshots
+
+The repository contains screenshots of:
+
+- Login Page
+- Home Page
+- Real Job Prediction
+- Fake Job Prediction
+
+---
+
+## Author
+
+**Bhavashree Venkatachalam**
+
+**Project:** Fake Job Offer Detector Using Machine Learning
+
+**Technologies:** Python, Flask, Scikit-learn, Pandas, NumPy, TF-IDF, HTML, CSS, Git & GitHub
+
+---
+
+## License
+
+This project is developed for educational and academic purposes.
