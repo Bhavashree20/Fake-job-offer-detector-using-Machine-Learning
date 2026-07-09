@@ -1,41 +1,88 @@
+/* Body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    background: url("images/background.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
+/* Main Container */
 .container {
-    width: 60%;
-    margin: 50px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px gray;
-}
-
-h1 {
+    width: 420px;
+    margin: 60px auto;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     text-align: center;
-    color: #333;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-button {
-    background: blue;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+/* Logo */
 .logo {
     width: 80px;
     height: auto;
+    margin-bottom: 15px;
+}
+
+/* Heading */
+h2 {
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+label {
     display: block;
-    margin: 0 auto 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+}
+
+/* Button */
+input[type="submit"] {
+    width: 100%;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0d47a1;
+}
+
+/* Prediction Result */
+h3 {
+    color: green;
+    margin-top: 20px;
+}
+
+/* Error Message */
+p {
+    color: red;
+    font-weight: bold;
 }

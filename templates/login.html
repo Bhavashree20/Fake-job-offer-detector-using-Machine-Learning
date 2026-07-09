@@ -5,30 +5,32 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-    <div class="container">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" width="80" alt="Logo">
+<div class="container">
 
-        <h2>Fake Job Offer Detector - Login</h2>
+    <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo" alt="Logo">
 
-        <form method="POST">
+    <h2>Fake Job Offer Detector - Login</h2>
 
-            <label>Username:</label><br>
-            <input type="text" name="username" required><br><br>
+    <form method="POST">
 
-            <label>Password:</label><br>
-            <input type="password" name="password" required><br><br>
+        <label>Username</label>
+        <input type="text" name="username" required>
 
-            <input type="submit" value="Login">
+        <label>Password</label>
+        <input type="password" name="password" required>
 
-        </form>
+        <input type="submit" value="Login">
 
-        {% if error %}
-        <p style="color:red;">{{ error }}</p>
-        {% endif %}
+    </form>
 
-    </div>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+</div>
 
 </body>
 </html>
