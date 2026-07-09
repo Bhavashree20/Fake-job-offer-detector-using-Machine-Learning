@@ -2,21 +2,31 @@
 <html>
 <head>
     <title>Fake Job Offer Detector</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-    <h2>Fake Job Offer Detector</h2>
+    <div class="container">
 
-    <form action="/predict" method="POST">
-        <textarea name="job_description" rows="10" cols="50" placeholder="Enter Job Description"></textarea>
-        <br><br>
+        <h2>Fake Job Offer Detector</h2>
 
-        <input type="submit" value="Predict">
-    </form>
+        <form action="/predict" method="POST">
 
-    {% if prediction %}
-        <h3>Prediction: {{ prediction }}</h3>
-    {% endif %}
+            <textarea name="job_description" rows="10" cols="50" placeholder="Enter Job Description" required></textarea>
+
+            <br><br>
+
+            <input type="submit" value="Predict">
+
+        </form>
+
+        {% if prediction %}
+            <h3>Prediction: {{ prediction }}</h3>
+        {% endif %}
+
+    </div>
 
 </body>
 </html>
