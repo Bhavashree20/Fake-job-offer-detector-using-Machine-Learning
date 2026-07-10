@@ -12,21 +12,26 @@
 
     <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo" alt="Logo">
 
-    <h2>Fake Job Offer Detector</h2>
+    <h2 class="welcome">Welcome, Bhavashree 👋</h2>
+<h2>Fake Job Offer Detector</h2>
 
     <form action="/predict" method="POST">
 
         <label>Enter Job Description</label>
 
-        <textarea name="job_description" rows="10" placeholder="Paste the job description here..." required></textarea>
+        <textarea name="job_description" rows="10" placeholder="Paste the job description here..." required>{{ job_description if job_description else "" }}</textarea>
 
         <input type="submit" value="Predict">
 
     </form>
 
     {% if prediction %}
-        <h3>Prediction: {{ prediction }}</h3>
+    {% if prediction == "Real Job Posting" %}
+        <h3 class="real-job">Prediction: {{ prediction }}</h3>
+    {% else %}
+        <h3 class="fake-job">Prediction: {{ prediction }}</h3>
     {% endif %}
+{% endif %}
 
 </div>
 

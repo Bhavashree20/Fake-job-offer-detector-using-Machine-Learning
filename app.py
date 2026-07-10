@@ -37,7 +37,7 @@ def predict():
     else:
         result = "Real Job Posting"
 
-    return render_template("index.html", prediction=result)
+    return render_template("index.html", prediction=result, job_description=text)
 
 if __name__ == "__main__":
     app.run(debug=True)

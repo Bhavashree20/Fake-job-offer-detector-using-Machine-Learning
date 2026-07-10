@@ -77,12 +77,28 @@ input[type="submit"]:hover {
 
 /* Prediction Result */
 h3 {
-    color: green;
     margin-top: 20px;
+}
+
+.real-job {
+    color: green;
+    font-weight: bold;
+}
+
+.fake-job {
+    color: red;
+    font-weight: bold;
 }
 
 /* Error Message */
 p {
     color: red;
     font-weight: bold;
+}
+/* Welcome Text */
+.welcome {
+    color: #0d47a1;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
